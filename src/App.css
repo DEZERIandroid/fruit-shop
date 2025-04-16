@@ -1,0 +1,526 @@
+html{
+  background-image:url('./assets/fone.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+
+
+body{
+  min-height: 100lvh;
+  display: grid;
+  
+}
+
+
+
+
+
+
+
+.fruits {
+  margin-top: 100px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 20px;
+  background-color: #121212fa; /* Тёмный фон */
+  min-width: 650px;
+}
+
+.fruit-ul {
+  list-style: none; /* Убираем маркеры списка */
+  padding: 0;
+  margin: 0;
+  border: 1px solid #333;
+  border-radius: 8px;
+  width: 200px;
+  background-color: #1e1e1e; /* Темно-серый фон карточки */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+
+
+.fruit-ul li {
+  padding: 15px;
+  text-align: center;
+}
+
+.fruit-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #ffffff; /* Белый текст */
+  margin-bottom: 10px;
+}
+
+.fruit-price {
+  font-size: 16px;
+  color: #888; /* Серый текст для цены */
+  margin-bottom: 15px;
+  
+}
+
+
+
+.button-addToCart {
+  background-color: #bb86fc; /* Фиолетовая кнопка */
+  color: #fff;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+  
+}
+
+.button-addToCart:hover {
+  background-color: #9c66f7
+}
+
+/* Стили для кнопки сортировки */
+.fruit-sort-button {
+  background-color: #1e1e1e; /* Цвет фона как у карточек */
+  color: #bb86fc; /* Фиолетовый текст как у кнопок "В корзину" */
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  margin-bottom: 20px;
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+}
+
+.fruit-sort-button:hover {
+  background-color: #333; /* Темнеет при наведении */
+}
+
+/* Стили для поля поиска */
+input[type="text"] {
+  background-color: #1e1e1e; /* Цвет фона как у карточек */
+  color: #ffffff; /* Белый текст */
+  border: 1px solid #333;
+  border-radius: 8px;
+  padding: 12px 15px;
+  font-size: 16px;
+  margin-bottom: 20px;
+  width: 100%;
+  max-width: 400px; /* Ограничиваем ширину для больших экранов */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  transition: border-color 0.3s ease;
+}
+
+input[type="text"]:focus {
+  border-color: #bb86fc; /* Подсветка при фокусе */
+  outline: none;
+}
+
+
+.options-buttons{
+  display: flex;
+  align-items: center;
+  transform: translateY(160%);
+}
+
+
+
+
+
+
+
+
+
+.cartes{
+  display: grid;
+  justify-items: center;
+  
+}
+
+@keyframes poyavlenie {
+  0%{opacity: 0;}
+  100%{opacity: 1;}
+}
+
+
+.cart-ul {
+  list-style: none; /* Убираем маркеры списка */
+  padding: 0;
+  margin: 0;
+  background-color: #1e1e1efa; /* Тёмный фон */
+  border: 1px solid #333; /* Тёмная граница */
+  border-radius: 8px;
+  max-width: 400px;
+  margin-top: 20px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Лёгкая тень */
+  max-height: 300px; /* Ограничение высоты */
+  overflow-y: auto; /* Добавляем вертикальный скролл */
+  transition: all 0.2s ease-in-out;
+  animation: poyavlenie 0.27s ease-in-out;
+
+  
+  &:hover{
+    box-shadow: 0 0 1rem #bb86fc;
+  }
+}
+.cart-ul li {
+  min-width: 350px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 12px 15px; /* Увеличиваем отступы */
+  border-bottom: 1px solid #2a2a2a; /* Тёмная разделительная линия */
+  animation: poyavlenie 0.5s ease-in-out;
+}
+
+.cart-ul li:last-child {
+  border-bottom: none; /* Убираем границу у последнего элемента */
+}
+
+.cart-fruit-name {
+  
+  font-size: 16px;
+  font-weight: bold;
+  color: #ffffff; /* Белый текст */
+  text-transform: uppercase; /* Делаем текст заглавным */
+  letter-spacing: 1px; /* Расстояние между буквами */
+}
+
+.cart-fruit-price {
+  font-size: 14px;
+  color: #bb86fc; /* Фиолетовый акцент */
+  font-weight: 500; /* Полужирный шрифт */
+  animation: poyavlenie 0.7s ease-in-out;
+}
+
+
+.button-delFromCart{
+  animation: poyavlenie 0.5s ease-in-out;
+  border: none;
+  background-color: #12121200;
+  color: rgb(207, 77, 77);
+
+
+  &:hover{
+    color: red;
+  }
+}
+
+
+
+
+
+
+
+/* Стили для хедера */
+.header {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-width:500px;
+}
+
+.header-cont{
+  display: flex;
+  justify-content: space-between; /* Логотип слева, навигация справа */
+  align-items: center;
+  padding: 15px 20px; /* Отступы внутри хедера */
+  background-color: #1e1e1efb; /* Темный фон */
+  color: #ffffff; /* Белый текст */
+  border-bottom: 1px solid #333; /* Легкая граница внизу */
+  min-width: 100%;
+}
+
+
+.header-logo {
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 1px; /* Расстояние между буквами */
+  text-transform: uppercase; /* Заглавные буквы */
+  color: #bb86fc; /* Фиолетовый акцент */
+}
+
+.header-nav {
+  display: flex;
+  gap: 20px; /* Расстояние между ссылками */
+}
+
+.header-link {
+  font-size: 16px;
+  color: #ffffff; /* Белый цвет ссылок */
+  text-decoration: none; /* Убираем подчеркивание */
+  transition: color 0.3s ease; /* Плавный переход при наведении */
+}
+
+.header-link:hover {
+  color: #bb86fc; /* Фиолетовый цвет при наведении */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media (max-width:414px) {
+  .fruits {
+    margin-top: 100px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 20px;
+    background-color: #121212fa; /* Тёмный фон */
+  }
+  
+  .fruit-ul {
+    list-style: none; /* Убираем маркеры списка */
+    padding: 0;
+    margin: 0;
+    border: 1px solid #333;
+    border-radius: 8px;
+    width: 200px;
+    background-color: #1e1e1e; /* Темно-серый фон карточки */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  
+  
+  .fruit-ul li {
+    padding: 15px;
+    text-align: center;
+  }
+  
+  .fruit-name {
+    font-size: 18px;
+    font-weight: bold;
+    color: #ffffff; /* Белый текст */
+    margin-bottom: 10px;
+  }
+  
+  .fruit-price {
+    font-size: 16px;
+    color: #888; /* Серый текст для цены */
+    margin-bottom: 15px;
+    
+  }
+  
+  
+  
+  .button-addToCart {
+    background-color: #bb86fc; /* Фиолетовая кнопка */
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s ease;
+    
+  }
+  
+  .button-addToCart:hover {
+    background-color: #9c66f7
+  }
+  
+  /* Стили для кнопки сортировки */
+  .fruit-sort-button {
+    background-color: #1e1e1e; /* Цвет фона как у карточек */
+    color: #bb86fc; /* Фиолетовый текст как у кнопок "В корзину" */
+    border: none;
+    padding: 10px 20px;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 16px;
+    margin-bottom: 20px;
+    transition: background-color 0.3s ease;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+  }
+  
+  .fruit-sort-button:hover {
+    background-color: #333; /* Темнеет при наведении */
+  }
+  
+  /* Стили для поля поиска */
+  input[type="text"] {
+    background-color: #1e1e1e; /* Цвет фона как у карточек */
+    color: #ffffff; /* Белый текст */
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 12px 15px;
+    font-size: 16px;
+    margin-bottom: 20px;
+    width: 100%;
+    max-width: 400px; /* Ограничиваем ширину для больших экранов */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    transition: border-color 0.3s ease;
+  }
+  
+  input[type="text"]:focus {
+    border-color: #bb86fc; /* Подсветка при фокусе */
+    outline: none;
+  }
+  
+  
+  .options-buttons{
+    display: flex;
+    align-items: center;
+    transform: translateY(160%);
+  }
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  .cartes{
+    display: grid;
+    justify-items: center;
+    
+  }
+  
+  @keyframes poyavlenie {
+    0%{opacity: 0;}
+    100%{opacity: 1;}
+  }
+  
+  
+  .cart-ul {
+    list-style: none; /* Убираем маркеры списка */
+    padding: 0;
+    margin: 0;
+    background-color: #1e1e1efa; /* Тёмный фон */
+    border: 1px solid #333; /* Тёмная граница */
+    border-radius: 8px;
+    max-width: 400px;
+    margin-top: 20px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2); /* Лёгкая тень */
+    max-height: 300px; /* Ограничение высоты */
+    overflow-y: auto; /* Добавляем вертикальный скролл */
+    transition: all 0.2s ease-in-out;
+    animation: poyavlenie 0.27s ease-in-out;
+  
+    
+    &:hover{
+      box-shadow: 0 0 1rem #bb86fc;
+    }
+  }
+  .cart-ul li {
+    min-width: 350px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 15px; /* Увеличиваем отступы */
+    border-bottom: 1px solid #2a2a2a; /* Тёмная разделительная линия */
+    animation: poyavlenie 0.5s ease-in-out;
+  }
+  
+  .cart-ul li:last-child {
+    border-bottom: none; /* Убираем границу у последнего элемента */
+  }
+  
+  .cart-fruit-name {
+    
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff; /* Белый текст */
+    text-transform: uppercase; /* Делаем текст заглавным */
+    letter-spacing: 1px; /* Расстояние между буквами */
+  }
+  
+  .cart-fruit-price {
+    font-size: 14px;
+    color: #bb86fc; /* Фиолетовый акцент */
+    font-weight: 500; /* Полужирный шрифт */
+    animation: poyavlenie 0.7s ease-in-out;
+  }
+  
+  
+  .button-delFromCart{
+    animation: poyavlenie 0.5s ease-in-out;
+    border: none;
+    background-color: #12121200;
+    color: rgb(207, 77, 77);
+  
+  
+    &:hover{
+      color: red;
+    }
+  }
+  
+  
+  
+  
+  
+  
+  
+  /* Стили для хедера */
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+
+  .header-cont{
+    display: flex;
+    justify-content: space-between; /* Логотип слева, навигация справа */
+    align-items: center;
+    padding: 15px 20px; /* Отступы внутри хедера */
+    background-color: #1e1e1efb; /* Темный фон */
+    color: #ffffff; /* Белый текст */
+    border-bottom: 1px solid #333; /* Легкая граница внизу */
+  }
+  
+  .header-logo {
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: 1px; /* Расстояние между буквами */
+    text-transform: uppercase; /* Заглавные буквы */
+    color: #bb86fc; /* Фиолетовый акцент */
+  }
+  
+  .header-nav {
+    display: flex;
+    gap: 20px; /* Расстояние между ссылками */
+  }
+  
+  .header-link {
+    font-size: 16px;
+    color: #ffffff; /* Белый цвет ссылок */
+    text-decoration: none; /* Убираем подчеркивание */
+    transition: color 0.3s ease; /* Плавный переход при наведении */
+  }
+  
+  .header-link:hover {
+    color: #bb86fc; /* Фиолетовый цвет при наведении */
+  }
+}
