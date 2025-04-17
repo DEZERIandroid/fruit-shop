@@ -52,3 +52,4 @@ export default tseslint.config({
   },
 })
 ```
+Будьте мужчинами короче хъван буго гьани
